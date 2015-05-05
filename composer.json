@@ -1,0 +1,28 @@
+{
+	"name": "rmcgirr83/zodiacs",
+	"type": "phpbb-extension",
+	"description": "This Extension will allow a zodiac to appear if the user had inputted month and birthday",
+	"version": "1.0.0",
+	"time": "2015-05-05",
+	"keywords": ["phpbb", "extension", "zodiacs", "communication"],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Rich McGirr",
+			"email": "rmcgirr83@gmail.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"require-dev": {
+		"phpbb/epv": "dev-master"
+	},
+	"extra": {
+		"display-name": "Zodiacs",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.4-RC1,<3.2.*@dev"
+		}
+	}
+}

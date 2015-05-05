@@ -1,0 +1,15 @@
+imports:
+    - { resource: zodiacspath.yml }
+
+services:
+    rmcgirr83.zodiacs.listener:
+        class: rmcgirr83\zodiacs\event\listener
+        arguments:
+            - @request
+            - @template
+            - @user
+            - %core.root_path%
+            - %core.php_ext%
+            - %rmcgirr83.zodiacs.imagepath%
+        tags:
+            - { name: event.listener }
