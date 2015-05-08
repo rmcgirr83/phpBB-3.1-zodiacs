@@ -203,52 +203,53 @@ class listener implements EventSubscriberInterface
 		$zodiac = '';
 		if (!empty($user_birthday))
 		{
-			list($day, $month) = explode ("-", $user_birthday);
-			if ((trim($month) == 3 && $day > 20) || (trim($month) == 4 && $day < 20))
+			list($bday, $bmonth) = array_map('intval', explode('-', $user_birthday));
+
+			if (($bmonth == 3 && $bday > 20) || ($bmonth == 4 && $bday < 20))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'aries.gif" alt="' . $this->user->lang['ZODIAC'] . '" style="vertical-align:middle;" />';
 			}
-			else if ((trim($month) == 4 && $day > 19) || (trim($month) == 5 && $day < 21))
+			else if (($bmonth == 4 && $bday > 19) || ($bmonth == 5 && $bday < 21))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'taurus.gif" alt="' . $this->user->lang['ZODIAC'] . '" style="vertical-align:middle;" />';
 			}
-			else if ((trim($month) == 5 && $day > 20) || (trim($month) == 6 && $day < 21))
+			else if (($bmonth == 5 && $bday > 20) || ($bmonth == 6 && $bday < 21))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'gemini.gif" alt="' . $this->user->lang['GEMINI'] . '" style="vertical-align:middle;" />';
 			}
-			else if ((trim($month) == 6 && $day > 20) || (trim($month) == 7 && $day < 23))
+			else if (($bmonth == 6 && $bday > 20) || ($bmonth == 7 && $bday < 23))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'cancer.gif" alt="' . $this->user->lang['CANCER'] . '" title="' . $this->user->lang['CANCER'] . '" style="vertical-align:middle;" />';
 			}
-			else if ((trim($month) == 7 && $day > 22) || (trim($month) == 8 && $day < 23))
+			else if (($bmonth == 7 && $bday > 22) || ($bmonth == 8 && $bday < 23))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'leo.gif" alt="' . $this->user->lang['LEO'] . '" title="' . $this->user->lang['LEO'] . '" style="vertical-align:middle;" />';
 			}
-			else if ((trim($month) == 8 && $day > 22) || (trim($month) == 9 && $day < 23))
+			else if (($bmonth == 8 && $bday > 22) || ($bmonth == 9 && $bday < 23))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'virgo.gif" alt="' . $this->user->lang['VIRGO'] . '" title="' . $this->user->lang['VIRGO'] . '" style="vertical-align:middle;" />';
 			}
-			else if ((trim($month) == 9 && $day > 22) || (trim($month) == 10 && $day < 23))
+			else if (($bmonth == 9 && $bday > 22) || ($bmonth == 10 && $bday < 23))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'libra.gif" alt="' . $this->user->lang['LIBRA'] . '" title="' . $this->user->lang['LIBRA'] . '" style="vertical-align:middle;" />';
 			}
-			else if ((trim($month) == 10 && $day > 22) || (trim($month) == 11 && $day < 22))
+			else if (($bmonth == 10 && $bday > 22) || ($bmonth == 11 && $bday < 22))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'scorpio.gif" alt="' . $this->user->lang['SCORPIO'] . '" title="' . $this->user->lang['SCORPIO'] . '" style="vertical-align:middle;" />';
 			}
-			else if ((trim($month) == 11 && $day > 21) || (trim($month) == 12 && $day < 22))
+			else if (($bmonth == 11 && $bday > 21) || ($bmonth == 12 && $bday < 22))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'sagittarius.gif" alt="' . $this->user->lang['SAGITTARIUS'] . '" title="' . $this->user->lang['SAGITTARIUS'] . '" style="vertical-align:middle;" />';
 			}
-			else if ((trim($month) == 12 && $day > 21) || (trim($month) == 1 && $day < 20))
+			else if (($bmonth == 12 && $bday > 21) || ($bmonth == 1 && $bday < 20))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'capricorn.gif" alt="' . $this->user->lang['CAPRICORN'] . '" title="' . $this->user->lang['CAPRICORN'] . '" style="vertical-align:middle;" />';
 			}
-			else if ((trim($month) == 1 && $day > 19) || (trim($month) == 2 && $day < 19))
+			else if (($bmonth == 1 && $bday > 19) || ($bmonth == 2 && $bday < 19))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'aquarius.gif" alt="' . $this->user->lang['AQUARIUS'] . '" title="' . $this->user->lang['AQUARIUS'] . '" style="vertical-align:middle;" />';
 			}
-			else if ((trim($month) == 2 && $day > 18) || (trim($month) == 3 && $day < 21))
+			else if (($bmonth == 2 && $bday > 18) || ($bmonths == 3 && $bday < 21))
 			{
 				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'pisces.gif" alt="' . $this->user->lang['PISCES'] . '" title="' . $this->user->lang['PISCES'] . '" style="vertical-align:middle;" />';
 			}
