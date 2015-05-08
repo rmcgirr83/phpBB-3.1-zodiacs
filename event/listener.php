@@ -72,9 +72,11 @@ class listener implements EventSubscriberInterface
 			'core.viewtopic_cache_user_data'			=> 'viewtopic_cache_user_data',
 			'core.viewtopic_cache_guest_data'			=> 'viewtopic_cache_guest_data',
 			'core.viewtopic_modify_post_row'			=> 'viewtopic_modify_post_row',
+			'core.viewtopic_modify_page_title'			=> 'user_setup',
 			'core.memberlist_view_profile'				=> 'memberlist_view_profile',
 			'core.search_get_posts_data'				=> 'search_get_posts_data',
 			'core.search_modify_tpl_ary'				=> 'search_modify_tpl_ary',
+			'core.search_results_modify_search_title'	=> 'user_setup',
 		);
 	}
 
@@ -87,12 +89,7 @@ class listener implements EventSubscriberInterface
 	*/
 	public function user_setup($event)
 	{
-		$page_name = substr($this->user->page['page_name'], 0, strpos($this->user->page['page_name'], '.'));
-
-		if ($page_name == 'search' || $page_name == 'viewtopic' || $page_name == 'memberlist')
-		{
-			$this->user->add_lang_ext('rmcgirr83/zodiacs', 'zodiacs');
-		}
+		$this->user->add_lang_ext('rmcgirr83/zodiacs', 'zodiacs');
 	}
 
 	/**
@@ -147,6 +144,8 @@ class listener implements EventSubscriberInterface
 	*/
 	public function memberlist_view_profile($event)
 	{
+		$this->user->add_lang_ext('rmcgirr83/zodiacs', 'zodiacs');
+
 		$zodiac = $this->get_user_zodiac($event['member']['user_birthday']);
 
 		$this->template->assign_vars(array(
