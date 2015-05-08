@@ -68,7 +68,6 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.user_setup'							=> 'user_setup',
 			'core.viewtopic_cache_user_data'			=> 'viewtopic_cache_user_data',
 			'core.viewtopic_cache_guest_data'			=> 'viewtopic_cache_guest_data',
 			'core.viewtopic_modify_post_row'			=> 'viewtopic_modify_post_row',
