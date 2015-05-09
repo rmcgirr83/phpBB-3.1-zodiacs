@@ -205,15 +205,15 @@ class listener implements EventSubscriberInterface
 
 			if (($bmonth == 3 && $bday > 20) || ($bmonth == 4 && $bday < 20))
 			{
-				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'aries.gif" alt="' . $this->user->lang['ZODIAC'] . '" style="vertical-align:middle;" />';
+				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'aries.gif" alt="' . $this->user->lang['ARIES'] . '" title="' . $this->user->lang['ARIES'] . '" style="vertical-align:middle;" />';
 			}
 			else if (($bmonth == 4 && $bday > 19) || ($bmonth == 5 && $bday < 21))
 			{
-				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'taurus.gif" alt="' . $this->user->lang['ZODIAC'] . '" style="vertical-align:middle;" />';
+				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'taurus.gif" alt="' . $this->user->lang['TAURUS'] . '" title="' . $this->user->lang['TAURUS'] . '" style="vertical-align:middle;" />';
 			}
 			else if (($bmonth == 5 && $bday > 20) || ($bmonth == 6 && $bday < 21))
 			{
-				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'gemini.gif" alt="' . $this->user->lang['GEMINI'] . '" style="vertical-align:middle;" />';
+				$zodiac = '<img src="' . $this->root_path . $this->images_path . 'gemini.gif" alt="' . $this->user->lang['GEMINI'] . '" title="' . $this->user->lang['GEMINI'] . '" style="vertical-align:middle;" />';
 			}
 			else if (($bmonth == 6 && $bday > 20) || ($bmonth == 7 && $bday < 23))
 			{
