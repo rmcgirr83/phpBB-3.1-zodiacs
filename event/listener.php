@@ -71,7 +71,7 @@ class listener implements EventSubscriberInterface
 			'core.viewtopic_cache_user_data'			=> 'viewtopic_cache_user_data',
 			'core.viewtopic_cache_guest_data'			=> 'viewtopic_cache_guest_data',
 			'core.viewtopic_modify_post_row'			=> 'viewtopic_modify_post_row',
-			'core.viewtopic_modify_page_title'			=> 'user_setup',
+			'core.viewtopic_before_f_read_check'		=> 'user_setup',
 			'core.memberlist_view_profile'				=> 'memberlist_view_profile',
 			'core.search_get_posts_data'				=> 'search_get_posts_data',
 			'core.search_modify_tpl_ary'				=> 'search_modify_tpl_ary',
