@@ -71,11 +71,10 @@ class listener implements EventSubscriberInterface
 			'core.viewtopic_cache_user_data'			=> 'viewtopic_cache_user_data',
 			'core.viewtopic_cache_guest_data'			=> 'viewtopic_cache_guest_data',
 			'core.viewtopic_modify_post_row'			=> 'viewtopic_modify_post_row',
-			'core.viewtopic_before_f_read_check'		=> 'user_setup',
 			'core.memberlist_view_profile'				=> 'memberlist_view_profile',
 			'core.search_get_posts_data'				=> 'search_get_posts_data',
 			'core.search_modify_tpl_ary'				=> 'search_modify_tpl_ary',
-			'core.search_results_modify_search_title'	=> 'user_setup',
+			'core.user_setup'							=> 'user_setup',
 		);
 	}
 
@@ -88,7 +87,14 @@ class listener implements EventSubscriberInterface
 	*/
 	public function user_setup($event)
 	{
-		$this->user->add_lang_ext('rmcgirr83/zodiacs', 'zodiacs');
+		// what page are we on?
+		$page_name = substr($this->user->page['page_name'], 0, strpos($this->user->page['page_name'], '.'));
+
+		// We only care about memberlist and viewtopic
+		if (in_array($page_name, array('viewtopic', 'memberlist', 'search')))
+		{
+			$this->user->add_lang_ext('rmcgirr83/zodiacs', 'zodiacs');
+		}
 	}
 
 	/**
