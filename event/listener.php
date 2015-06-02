@@ -149,8 +149,6 @@ class listener implements EventSubscriberInterface
 	*/
 	public function memberlist_view_profile($event)
 	{
-		$this->user->add_lang_ext('rmcgirr83/zodiacs', 'zodiacs');
-
 		$zodiac = $this->get_user_zodiac($event['member']['user_birthday']);
 
 		$this->template->assign_vars(array(
