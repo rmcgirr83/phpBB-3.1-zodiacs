@@ -93,7 +93,12 @@ class listener implements EventSubscriberInterface
 		// We only care about memberlist and viewtopic
 		if (in_array($page_name, array('viewtopic', 'memberlist', 'search')))
 		{
-			$this->user->add_lang_ext('rmcgirr83/zodiacs', 'zodiacs');
+			$lang_set_ext = $event['lang_set_ext'];
+			$lang_set_ext[] = array(
+				'ext_name' => 'rmcgirr83/zodiacs',
+				'lang_set' => 'zodiacs',
+			);
+			$event['lang_set_ext'] = $lang_set_ext;
 		}
 	}
 
