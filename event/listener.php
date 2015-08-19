@@ -143,8 +143,8 @@ class listener implements EventSubscriberInterface
 		if (!$this->birthdays_allowed())
 		{
 			return;
-		}	
-	
+		}
+
 		$array = $event['user_cache_data'];
 		$array['user_birthday'] = '';
 		$event['user_cache_data'] = $array;
@@ -279,14 +279,10 @@ class listener implements EventSubscriberInterface
 	}
 
 	/**
-	 * Ensure loading of birthdays and allowing of birthdays is set 
+	 * Ensure loading of birthdays and allowing of birthdays is set
 	**/
 	private function birthdays_allowed()
 	{
-		if (empty($this->config['allow_birthdays']))
-		{
-			return false;
-		}
-		return true;
+		return $this->config['allow_birthdays'];
 	}
 }
