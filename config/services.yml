@@ -5,6 +5,7 @@ services:
     rmcgirr83.zodiacs.listener:
         class: rmcgirr83\zodiacs\event\listener
         arguments:
+            - @config
             - @request
             - @template
             - @user

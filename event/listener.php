@@ -20,6 +20,9 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 */
 class listener implements EventSubscriberInterface
 {
+	/** @var \phpbb\config\config */
+	protected $config;
+
 	/** @var \phpbb\request\request */
 	protected $request;
 
@@ -43,6 +46,7 @@ class listener implements EventSubscriberInterface
 	protected $zodiacs_path;
 
 	public function __construct(
+		\phpbb\config\config $config,
 		\phpbb\request\request $request,
 		\phpbb\template\template $template,
 		\phpbb\user $user,
@@ -50,6 +54,7 @@ class listener implements EventSubscriberInterface
 		$php_ext,
 		$zodiacs_path)
 	{
+		$this->config = $config;
 		$this->request = $request;
 		$this->template = $template;
 		$this->user = $user;
@@ -87,6 +92,11 @@ class listener implements EventSubscriberInterface
 	*/
 	public function user_setup($event)
 	{
+		if (!$this->birthdays_allowed())
+		{
+			return;
+		}
+
 		// what page are we on?
 		$page_name = substr($this->user->page['page_name'], 0, strpos($this->user->page['page_name'], '.'));
 
@@ -111,6 +121,11 @@ class listener implements EventSubscriberInterface
 	*/
 	public function viewtopic_cache_user_data($event)
 	{
+		if (!$this->birthdays_allowed())
+		{
+			return;
+		}
+
 		$array = $event['user_cache_data'];
 		$array['user_birthday'] = $event['row']['user_birthday'];
 		$event['user_cache_data'] = $array;
@@ -125,6 +140,11 @@ class listener implements EventSubscriberInterface
 	*/
 	public function viewtopic_cache_guest_data($event)
 	{
+		if (!$this->birthdays_allowed())
+		{
+			return;
+		}	
+	
 		$array = $event['user_cache_data'];
 		$array['user_birthday'] = '';
 		$event['user_cache_data'] = $array;
@@ -138,6 +158,11 @@ class listener implements EventSubscriberInterface
 	*/
 	public function viewtopic_modify_post_row($event)
 	{
+		if (!$this->birthdays_allowed())
+		{
+			return;
+		}
+
 		$zodiac = $this->get_user_zodiac($event['user_poster_data']['user_birthday']);
 
 		$event['post_row'] = array_merge($event['post_row'],array(
@@ -154,6 +179,11 @@ class listener implements EventSubscriberInterface
 	*/
 	public function memberlist_view_profile($event)
 	{
+		if (!$this->birthdays_allowed())
+		{
+			return;
+		}
+
 		$zodiac = $this->get_user_zodiac($event['member']['user_birthday']);
 
 		$this->template->assign_vars(array(
@@ -170,6 +200,11 @@ class listener implements EventSubscriberInterface
 	*/
 	public function search_get_posts_data($event)
 	{
+		if (!$this->birthdays_allowed())
+		{
+			return;
+		}
+
 		$array = $event['sql_array'];
 		$array['SELECT'] .= ', u.user_birthday';
 		$event['sql_array'] = $array;
@@ -184,6 +219,11 @@ class listener implements EventSubscriberInterface
 	*/
 	public function search_modify_tpl_ary($event)
 	{
+		if (!$this->birthdays_allowed())
+		{
+			return;
+		}
+
 		if ($event['show_results'] == 'topics')
 		{
 			return;
@@ -236,5 +276,17 @@ class listener implements EventSubscriberInterface
 				}
 			}
 		}
+	}
+
+	/**
+	 * Ensure loading of birthdays and allowing of birthdays is set 
+	**/
+	private function birthdays_allowed()
+	{
+		if (empty($this->config['allow_birthdays']))
+		{
+			return false;
+		}
+		return true;
 	}
 }
