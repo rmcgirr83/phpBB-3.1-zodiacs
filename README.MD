@@ -1,7 +1,7 @@
 phpbb-3.1-zodiacs
 =========================
 
-phpBB 3.1 extension which display a users zodiac if they have inputted a month and day for their birthday.
+phpBB 3.1 extension which display a users zodiac if they have inputted a month and day for their birthday.  Birthdays must be allowed on the forum for this extension to display.
 
 [![Build Status](https://travis-ci.org/RMcGirr83/phpBB-3.1-zodiacs.svg?branch=master)](https://travis-ci.org/RMcGirr83/phpBB-3.1-zodiacs)
 ## Installation
