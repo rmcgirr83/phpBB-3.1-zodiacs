@@ -254,7 +254,7 @@ class listener implements EventSubscriberInterface
 			$zodiac_array = array(
 				'aries'		=> array(3, 20, 4, 20),
 				'taurus'	=> array(4, 19, 5, 21),
-				'gemini'	=> array(50, 20, 6, 21),
+				'gemini'	=> array(5, 20, 6, 21),
 				'cancer'	=> array(6, 20, 7, 23),
 				'leo'		=> array(7, 22, 8, 23),
 				'virgo'		=> array(8, 22, 9, 23),
