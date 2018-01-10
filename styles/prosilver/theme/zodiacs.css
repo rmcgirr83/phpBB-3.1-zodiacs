@@ -1,0 +1,47 @@
+/* Zodiacs
+* https://isabelcastillo.com/astrology-icons-with-css
+---------------------------------------- */
+.ai {
+    font-style:normal;
+    color:#105289;
+   /* font-weight:bold;*/
+    font-size:24px;
+    line-height:24px;
+	vertical-align: middle;
+}
+.ai.aries:before {
+    content:"\2648";
+}
+.ai.taurus:before {
+    content:"\2649";
+}
+.ai.gemini:before {
+    content:"\264A";
+}
+.ai.cancer:before {
+    content:"\264B";
+}
+.ai.leo:before {
+    content:"\264C";
+}
+.ai.virgo:before {
+    content:"\264D";
+}
+.ai.libra:before {
+    content:"\264E";
+}
+.ai.scorpio:before {
+    content:"\264F";
+}
+.ai.sagittarius:before {
+    content:"\2650";
+}
+.ai.capricorn:before {
+    content:"\2651";
+}
+.ai.aquarius:before {
+    content:"\2652";
+}
+.ai.pisces:before {
+    content:"\2653";
+}

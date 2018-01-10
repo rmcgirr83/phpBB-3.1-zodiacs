@@ -1,33 +1,39 @@
 {
-	"name": "rmcgirr83/zodiacs",
-	"type": "phpbb-extension",
-	"description": "This Extension will allow a zodiac to appear if the user had inputted month and day in the birthday settings",
-	"version": "1.0.1",
-	"time": "2015-08-19",
-	"keywords": ["phpbb", "extension", "zodiacs", "communication"],
-	"license": "GPL-2.0",
-	"authors": [
-		{
-			"name": "Rich McGirr",
-			"email": "rmcgirr83@gmail.com",
-			"role": "Developer"
-		}
-	],
-	"require": {
-		"php": ">=5.3.3"
-	},
-	"require-dev": {
-		"phpbb/epv": "dev-master"
-	},
-	"extra": {
-		"display-name": "Zodiacs",
-		"soft-require": {
-			"phpbb/phpbb": ">=3.1.1,<3.2.*@dev"
+    "name": "rmcgirr83/zodiacs",
+    "type": "phpbb-extension",
+    "description": "This Extension will allow a zodiac to appear if the user had inputted month and day in the birthday settings",
+    "version": "1.0.4",
+    "time": "2018-01-10",
+    "keywords": [
+        "phpbb",
+        "extension",
+        "zodiacs",
+        "communication"
+    ],
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Rich McGirr",
+            "email": "rmcgirr83@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "phpbb/phpbb": ">=3.1.1,<3.3"
+    },
+    "require-dev": {
+        "phpbb/epv": "dev-master"
+    },
+    "extra": {
+        "display-name": "Zodiacs",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.1.1,<3.3"
         },
         "version-check": {
             "host": "www.phpbb.com",
             "directory": "/customise/db/extension/zodiacs",
             "filename": "version_check"
         }
-	}
+    }
 }

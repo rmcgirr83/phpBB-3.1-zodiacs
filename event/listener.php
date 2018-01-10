@@ -32,12 +32,6 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\user */
 	protected $user;
 
-	/** @var string phpBB root path */
-	protected $phpbb_root_path;
-
-	/** @var string phpEx */
-	protected $php_ext;
-
 	/**
 	* the path to the images directory
 	*
@@ -49,18 +43,12 @@ class listener implements EventSubscriberInterface
 		\phpbb\config\config $config,
 		\phpbb\request\request $request,
 		\phpbb\template\template $template,
-		\phpbb\user $user,
-		$phpbb_root_path,
-		$php_ext,
-		$zodiacs_path)
+		\phpbb\user $user)
 	{
 		$this->config = $config;
 		$this->request = $request;
 		$this->template = $template;
 		$this->user = $user;
-		$this->root_path = $phpbb_root_path;
-		$this->php_ext = $php_ext;
-		$this->images_path = $zodiacs_path;
 	}
 
 	/**
@@ -108,6 +96,9 @@ class listener implements EventSubscriberInterface
 				'ext_name' => 'rmcgirr83/zodiacs',
 				'lang_set' => 'zodiacs',
 			);
+			$this->template->assign_vars(array(
+				'S_ZODIACS' => true,
+			));
 			$event['lang_set_ext'] = $lang_set_ext;
 		}
 	}
@@ -270,9 +261,9 @@ class listener implements EventSubscriberInterface
 			{
 				if (($bmonth == $date[0] && $bday > $date[1]) || ($bmonth == $date[2] && $bday < $date[3]))
 				{
-					$image = $this->root_path . $this->images_path . $sign . '.gif';
 					$title = $this->user->lang(strtoupper($sign));
-					return "<img src='$image' alt='$title' title='$title' style='vertical-align:middle;' />";
+					//return "<img src='$image' alt='$title' title='$title' style='vertical-align:middle;' />";
+					return '<i class="ai ' . $sign . '" title="' . $title . '"></i>';
 				}
 			}
 		}
