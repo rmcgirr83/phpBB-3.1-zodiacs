@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "phpbb/phpbb": ">=3.1.1"
+        "phpbb/phpbb": ">=3.2"
     },
     "require-dev": {
         "phpbb/epv": "dev-master"
@@ -27,7 +27,7 @@
     "extra": {
         "display-name": "Zodiacs",
         "soft-require": {
-            "phpbb/phpbb": ">=3.1.1"
+            "phpbb/phpbb": ">=3.2"
         },
         "version-check": {
             "host": "www.phpbb.com",

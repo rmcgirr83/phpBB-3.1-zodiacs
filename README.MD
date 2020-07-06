@@ -1,9 +1,9 @@
-phpbb-3.1-zodiacs
+zodiacs
 =========================
 
-phpBB 3.1 extension which display a users zodiac if they have inputted a month and day for their birthday.  Birthdays must be allowed on the forum for this extension to display.
+phpBB extension which display a users zodiac if they have inputted a month and day for their birthday.  Birthdays must be allowed on the forum for this extension to display.
 
-[![Build Status](https://travis-ci.org/rmcgirr83/phpBB-3.1-zodiacs.svg?branch=master)](https://travis-ci.org/rmcgirr83/phpBB-3.1-zodiacs)
+[![Build Status](https://travis-ci.org/rmcgirr83/zodiacs.svg?branch=master)](https://travis-ci.org/rmcgirr83/zodiacs)
 ## Installation
 
 ### 1. clone
@@ -11,7 +11,7 @@ Clone (or download and move) the repository into the folder ext/rmcgirr83/zodiac
 
 ```
 cd phpBB3
-git clone https://github.com/rmcgirr83/phpBB-3.1-zodiacs.git ext/rmcgirr83/zodiacs/
+git clone https://github.com/rmcgirr83/zodiacs.git ext/rmcgirr83/zodiacs/
 ```
 
 ### 2. activate
