@@ -3,7 +3,6 @@ zodiacs
 
 phpBB extension which display a users zodiac if they have inputted a month and day for their birthday.  Birthdays must be allowed on the forum for this extension to display.
 
-[![Build Status](https://travis-ci.com/rmcgirr83/zodiacs.svg?branch=master)](https://travis-ci.com/rmcgirr83/zodiacs)
 ## Installation
 
 ### 1. clone
