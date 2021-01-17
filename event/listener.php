@@ -20,24 +20,17 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 */
 class listener implements EventSubscriberInterface
 {
-	/** @var \phpbb\config\config */
+	/** @var config $config */
 	protected $config;
 
-	/** @var \phpbb\request\request */
+	/** @var request $request */
 	protected $request;
 
-	/** @var \phpbb\template\template */
+	/** @var template $template */
 	protected $template;
 
-	/** @var \phpbb\user */
+	/** @var user $user */
 	protected $user;
-
-	/**
-	* the path to the images directory
-	*
-	*@var string
-	*/
-	protected $zodiacs_path;
 
 	public function __construct(
 		\phpbb\config\config $config,
@@ -88,7 +81,7 @@ class listener implements EventSubscriberInterface
 		// what page are we on?
 		$page_name = substr($this->user->page['page_name'], 0, strpos($this->user->page['page_name'], '.'));
 
-		// We only care about memberlist and viewtopic
+		// We only care about certain pages
 		if (in_array($page_name, array('viewtopic', 'memberlist', 'search')))
 		{
 			$lang_set_ext = $event['lang_set_ext'];
@@ -210,12 +203,7 @@ class listener implements EventSubscriberInterface
 	*/
 	public function search_modify_tpl_ary($event)
 	{
-		if (!$this->birthdays_allowed())
-		{
-			return;
-		}
-
-		if ($event['show_results'] == 'topics')
+		if (!$this->birthdays_allowed() || $event['show_results'] == 'topics')
 		{
 			return;
 		}
@@ -262,7 +250,7 @@ class listener implements EventSubscriberInterface
 				if (($bmonth == $date[0] && $bday > $date[1]) || ($bmonth == $date[2] && $bday < $date[3]))
 				{
 					$title = $this->user->lang(strtoupper($sign));
-					//return "<img src='$image' alt='$title' title='$title' style='vertical-align:middle;' />";
+
 					return '<i class="ai ' . $sign . '" title="' . $title . '"></i>';
 				}
 			}

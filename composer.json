@@ -1,8 +1,8 @@
 {
     "name": "rmcgirr83/zodiacs",
     "type": "phpbb-extension",
-    "description": "This Extension will allow a zodiac to appear if the user had inputted month and day in the birthday settings",
-    "version": "1.0.4",
+    "description": "This Extension will allow a zodiac to appear if the user has inputted month and day in the birthday settings. Birthdays must be allowed on the forum for the extension to work.",
+    "version": "1.0.5",
     "time": "2020-04-14",
     "keywords": [
         "phpbb",

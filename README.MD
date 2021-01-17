@@ -1,7 +1,6 @@
-zodiacs
-=========================
+# Zodiacs
 
-phpBB extension which display a users zodiac if they have inputted a month and day for their birthday.  Birthdays must be allowed on the forum for this extension to display.
+phpBB extension that allows a user to display their zodiac if they have inputted a month and day for their birthday.  Birthdays must be allowed on the forum for this extension to display.
 
 ## Installation
 
