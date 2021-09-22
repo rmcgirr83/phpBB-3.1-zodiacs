@@ -3,7 +3,7 @@
     "type": "phpbb-extension",
     "description": "This Extension will allow a zodiac to appear if the user has inputted month and day in the birthday settings. Birthdays must be allowed on the forum for the extension to work.",
     "version": "1.0.5",
-    "time": "2020-04-14",
+    "time": "2021-09-21",
     "keywords": [
         "phpbb",
         "extension",
@@ -19,7 +19,8 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "phpbb/phpbb": ">=3.2"
+        "phpbb/phpbb": ">=3.3",
+        "composer/installers": "~1.0.0"
     },
     "require-dev": {
         "phpbb/epv": "dev-master"
@@ -27,7 +28,7 @@
     "extra": {
         "display-name": "Zodiacs",
         "soft-require": {
-            "phpbb/phpbb": ">=3.2"
+            "phpbb/phpbb": ">=3.3"
         },
         "version-check": {
             "host": "www.phpbb.com",

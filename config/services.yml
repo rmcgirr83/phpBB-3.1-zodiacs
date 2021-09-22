@@ -3,6 +3,7 @@ services:
         class: rmcgirr83\zodiacs\event\listener
         arguments:
             - '@config'
+            - '@language'
             - '@request'
             - '@template'
             - '@user'
